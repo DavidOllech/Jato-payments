@@ -1,0 +1,96 @@
+{
+  "theme": "dark",
+  "archetype": "Luxury (Archetype 5) + Swiss & High-Contrast (Archetype 4) hybrid",
+  "brand": {
+    "name": "JATO",
+    "tagline": "Send money. De jato.",
+    "tone": "Premium dark fintech, trusted institutional, fast, high-end."
+  },
+  "typography": {
+    "heading_font": "Satoshi",
+    "body_font": "Inter",
+    "description": "Using Satoshi for bold, premium headings (breaking the Inter-everywhere rule for tension) and Inter for high legibility body text as requested. Tracking must be tight (-0.02em to -0.04em) on headings.",
+    "hierarchy": {
+      "h1": "text-4xl sm:text-5xl font-black tracking-tighter",
+      "h2": "text-2xl sm:text-3xl font-bold tracking-tight",
+      "h3": "text-xl sm:text-2xl font-bold tracking-tight",
+      "body": "text-base font-normal leading-relaxed text-[#8A9CC2]",
+      "labels": "text-xs font-bold uppercase tracking-[0.2em] text-[#8A9CC2]"
+    }
+  },
+  "colors": {
+    "background": "#080C16",
+    "cards": "#0F1629",
+    "primary": "#0057FF",
+    "accent_success": "#00E5A0",
+    "text_primary": "#FFFFFF",
+    "text_secondary": "#8A9CC2",
+    "borders": "rgba(255, 255, 255, 0.1)",
+    "rules": "No pure white backgrounds. Use subtle blue glow via Box Shadows on primary elements. Hover states must have higher contrast (e.g., hover:bg-[#004BE6] for primary button). Never use full-screen gradients."
+  },
+  "visual_enhancers": {
+    "surfaces": [
+      {
+        "name": "Glassmorphism Cards",
+        "description": "Background #0F1629 at 80% opacity, heavy backdrop blur (backdrop-blur-xl), 1px solid border of border-white/10. For fintech, don't refract too much—keep data readable."
+      },
+      {
+        "name": "The Tracing Beam (Linear-style)",
+        "description": "Subtle glowing borders for pricing or high-conversion cards. A moving gradient background in a 1px border mask."
+      },
+      {
+        "name": "Subtle Blue Glow",
+        "description": "Use drop-shadow-[0_0_15px_rgba(0,87,255,0.3)] for critical JATO primary elements like the Fund button or main balance."
+      }
+    ],
+    "motion": "Fast, polished motion mimicking Linear. Crisp transitions, command-style menus, tap-activated contextual actions. Hover states on cards should have a slight lift (-translate-y-1) and enhanced border glow.",
+    "icons": "Phosphor Icons (@phosphor-icons/react) in Duotone weight for a high-end fintech feel. Very clean, technical aesthetic."
+  },
+  "layout_spacing": {
+    "grid": "Command-room grid. Dense but organized. grid-cols-1 md:grid-cols-4. Mobile-first responsive grids.",
+    "spacing_scale": "Tailwind standard p-4, p-6, p-8. Cards must have p-6 or p-8 internal padding.",
+    "alignment": "Optical alignment. Left-aligned content for numbers/densest areas. Center hero."
+  },
+  "components_instructions": [
+    {
+      "name": "Navigation / Header",
+      "usage": "Sticky header (z-50) with glassmorphism backdrop-blur-xl bg-[#080C16]/80. JATO bold wordmark logo. Primary CTA 'Sign Up' or 'Dashboard'."
+    },
+    {
+      "name": "Dashboard Cards",
+      "usage": "Shadcn cards heavily customized. bg-[#0F1629] backdrop-blur-md border-white/10 rounded-2xl. No heavy drop shadows, use inner borders. Main USDC balance should be massive (text-5xl) with tight tracking."
+    },
+    {
+      "name": "JATO Card Mockup",
+      "usage": "A physical card representation in the UI. Dark card (#0F1629 to #080C16 gradient), subtle noise texture, electric blue edges, Visa logo in corner. Glassmorphic overlay."
+    },
+    {
+      "name": "Transaction History",
+      "usage": "Dense list. Left-align. Avatar/Icon left, Name/Date middle, Amount right. Amounts in text-[#00E5A0] for success/incoming, white for outgoing. Filter tabs (Linear style, segmented control)."
+    },
+    {
+      "name": "Fund / PIX Screen",
+      "usage": "Large keypad input for BRL, live conversion to USDC below it. Prominent 'Fund with PIX' button with #00E5A0 accent."
+    }
+  ],
+  "accessibility_and_testing": {
+    "contrast": "Ensure #8A9CC2 on #080C16 passes 4.5:1. Primary text is #FFFFFF.",
+    "testing": "All interactive elements MUST have data-testid attributes (e.g., data-testid='fund-pix-button', data-testid='signup-submit-button')."
+  },
+  "media": {
+    "image_urls": [
+      {
+        "url": "https://images.pexels.com/photos/259200/pexels-photo-259200.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940",
+        "category": "Visa Card Reference",
+        "description": "Reference for Visa card mockups if realistic textures are needed."
+      },
+      {
+        "url": "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?crop=entropy&cs=srgb&fm=jpg&ixid=M3w4NjA1OTV8MHwxfHNlYXJjaHwyfHxwcm9mZXNzaW9uYWwlMjBoZWFkc2hvdCUyMHBvcnRyYWl0fGVufDB8fHx8MTc4MDY4NjEwNXww&ixlib=rb-4.1.0&q=85",
+        "category": "User Avatar",
+        "description": "User profile avatar for Dashboard and Settings screens."
+      }
+    ],
+    "icons_strategy": "Use Phosphor Icons (QrCode or Bank icon) for PIX. For Visa, use a stylized text 'VISA' or an SVG path. Do not use generic placeholders."
+  },
+  "instructions_to_main_agent": "Follow the mobile-first hybrid approach. Build React JS web screens designed to mimic a premium mobile app. Use Shadcn UI primitives and Tailwind CSS. Strict adherence to background #080C16 and cards #0F1629. Implement 'Phantom Wallet meets Linear' styling: clean, zero clutter, high contrast, crisp 1px borders, subtle blue glows (#0057FF) on key actions, green (#00E5A0) for success/positive amounts. Add data-testid to every button, input, and interactive element. Ensure the live rate ticker ('1 USDC = R$ 5.42') is visually distinct (e.g., monospace font or pill badge)."
+}
