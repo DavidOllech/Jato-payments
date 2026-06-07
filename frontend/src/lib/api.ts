@@ -1,7 +1,7 @@
 // JATO API client. Reads access token from secure storage on every request.
 import { storage } from "@/src/utils/storage";
 
-const BASE = process.env.EXPO_PUBLIC_BACKEND_URL || "";
+const BASE = process.env.EXPO_PUBLIC_BACKEND_URL || "https://jato-backend-production.up.railway.app";
 
 type Json = Record<string, unknown> | unknown[];
 
